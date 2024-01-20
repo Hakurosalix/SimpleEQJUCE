@@ -182,10 +182,10 @@ bool SimpleEQAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* SimpleEQAudioProcessor::createEditor()
 {
-    // return new SimpleEQAudioProcessorEditor (*this);
+    return new SimpleEQAudioProcessorEditor (*this);
     
     // GenericAudioProcessorEditor supplies a generic GUI (mainly used here for testing before implementing GUI)
-    return new juce::GenericAudioProcessorEditor(*this);
+    //return new juce::GenericAudioProcessorEditor(*this);
 }
 
 //==============================================================================
