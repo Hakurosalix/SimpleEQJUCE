@@ -100,33 +100,33 @@ private:
     }
     
     template <typename ChainType, typename CoefficientType>
-    void updateCutFilter(ChainType& sideLowCut,
+    void updateCutFilter(ChainType& sideCut,
                          const CoefficientType& cutCoefficients,
                          const Slope& lowCutSlope)
     {
         // Bypass all of the links in the chain
-        sideLowCut.template setBypassed<0>(true);
-        sideLowCut.template setBypassed<1>(true);
-        sideLowCut.template setBypassed<2>(true);
-        sideLowCut.template setBypassed<3>(true);
+        sideCut.template setBypassed<0>(true);
+        sideCut.template setBypassed<1>(true);
+        sideCut.template setBypassed<2>(true);
+        sideCut.template setBypassed<3>(true);
         
         switch (lowCutSlope)
         {
             case Slope_48:
             {
-                update<3>(sideLowCut, cutCoefficients);
+                update<3>(sideCut, cutCoefficients);
             }
             case Slope_36:
             {
-                update<2>(sideLowCut, cutCoefficients);
+                update<2>(sideCut, cutCoefficients);
             }
             case Slope_24:
             {
-                update<1>(sideLowCut, cutCoefficients);
+                update<1>(sideCut, cutCoefficients);
             }
             case Slope_12:
             {
-                update<0>(sideLowCut, cutCoefficients);
+                update<0>(sideCut, cutCoefficients);
             }
         }
         
